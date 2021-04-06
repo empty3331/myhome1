@@ -11,52 +11,48 @@
 <title>Insert title here</title>
 </head>
 <style>
-
-
-
-
-
-
 </style>
 
 <body>
 
 	<!--헤더-->
 	<div id="header">
-	
-	
-	<div id="headerAccount">
-	<div id="headerLogo">
-	<a><img id="logo" src="images/myhome/jeongwonLogo.png"></a>
-	</div>
 
-		<div id="headerAccInfo">
-			<div>
-				<a>회원님</a>
-			</div>
-			<div>
-				<a>회원님</a>
-			</div>
-			<div>
-				<a>마이페이지</a>
-			</div>
-			<div>
-				<a>로그아웃</a>
-			</div>
+		<div id="headerLogo">
+			<a><img id="logo" src="images/myhome/jeongwonLogo.png"></a>
 		</div>
-		</div>
+
+		<div id="headerAccount">
+		
 		
 		<div id="headerMenu">
-	<ul>
-		<li><a href="">옥상</a></li>
-		<li><a href="">교실</a></li>
-		<li><a href="">운동장</a></li>
-		<li><a href="">교문</a></li>
-	</ul>
-	
-</div>
+				<ul>
+					<li><a href="">교문</a></li>
+					<li><a href="">운동장</a></li>
+					<li><a href="">교실</a></li>
+					<li><a href="">옥상</a></li>
+				</ul>
+
+			</div>
 		
 		
+			<div id="headerAccInfo">
+				<div>
+					<a><img id="profile" src="images/myhome/jeongwonLogo.png"></a>
+				</div>
+				<div>관리자친구~</div>
+				<div>
+					<a href="">일기장</a>
+				</div>
+				<div>
+					<a href="">로그아웃</a>
+				</div>
+			</div>
+
+
+			
+		</div>
+
 
 	</div>
 	<!--헤더-->
