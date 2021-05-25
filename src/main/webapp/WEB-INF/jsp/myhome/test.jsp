@@ -9,11 +9,22 @@
 </head>
 <body>
 
-	
 
+	<!-- 헤더 -->
 	<jsp:include page="/WEB-INF/jsp/myhome/include/header.jsp" />
+
+
+	<!-- 메인 -->
+	<div id="content">
+		<div id="contentContainer">
+		<div id="conMain">
+				<a href="main.do"><img id="mainLogo" src="images/myhome/maintitle.jpg"></a>
+			</div>
+		</div>
+	</div>
 	
-	<h1>hello!</h1>
+	<!-- 푸터 -->
+	<jsp:include page="/WEB-INF/jsp/myhome/include/footer.jsp" />
 
 </body>
 </html>
