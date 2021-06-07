@@ -1,26 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
-    <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d %5p [%c] %m%n" />
-        </Console>
-    </Appenders>
-    <Loggers>
-        <Logger name="java.sql" level="INFO" additivity="false">
-            <AppenderRef ref="console" />
-        </Logger>
-        <Logger name="egovframework" level="DEBUG" additivity="false">
-            <AppenderRef ref="console" />
-        </Logger>
-          <!-- log SQL with timing information, post execution -->
-        <Logger name="jdbc.sqltiming" level="INFO" additivity="false">
-            <AppenderRef ref="console" />
-        </Logger>
-        <Logger name="org.springframework" level="INFO" additivity="false">
-            <AppenderRef ref="console" />
-        </Logger>
-        <Root level="INFO">
-            <AppenderRef ref="console" />
-        </Root>
-    </Loggers>
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %5p [%c] %m%n" />
+		</Console>
+		<RollingFile name="file" fileName="/home/odms_log/odms.log"
+			filePattern="/home/odms_log/$${date:yyyy}/$${date:MM}/odms_%d{yyyyMMddHH}.log.gz">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy /><!-- Rotated everyday -->
+				<SizeBasedTriggeringPolicy size="2048KB"/>
+				<TimeBasedTriggeringPolicy interval="1"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10" fileIndex="min"/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="java.sql" level="OFF" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.connection" level="OFF" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.sqlonly" level="OFF" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.audit" level="OFF" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="jdbc.resultset" level="OFF" additivity="false">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="egovframework" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger> <!-- 보이긴 하는데 가독성 .... -->
+		<Logger name="jdbc.sqltiming" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="jdbc.resultsettable" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+		<Root level="DEBUG">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />			
+		</Root>
+	</Loggers>
 </Configuration>

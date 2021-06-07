@@ -18,7 +18,7 @@
 	<div id="content">
 		<div id="contentContainer">
 		<div id="conMain">
-				<a href="main.do"><img id="mainLogo" src="images/myhome/maintitle.jpg"></a>
+				<!-- <a href="main.do"><img id="mainLogo" src="images/myhome/maintitle.jpg"></a> -->
 			</div>
 		</div>
 	</div>

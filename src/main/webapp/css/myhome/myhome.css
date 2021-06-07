@@ -51,6 +51,27 @@ a:hover {
 	width: 30%;
 }
 
+#loginContainer{
+	float:right;	 
+  vertical-align: middle;
+}
+#loginContainer>ul{
+	list-style: none;
+  margin: 0;
+  padding: 0;
+ 
+
+}
+#loginContainer>ul>li{
+ margin:0 5px;
+  float:left;
+
+}
+
+#loginContainer>ul>li>a{
+	color: #F8A1A4;
+	font-weight: bold;
+}
 
 /* =======================
       네이게이션 바

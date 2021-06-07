@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet"
 	href="<c:url value='/css/myhome/board.css'/>" />
-<title>Insert title here</title>
+<title>우리들마당</title>
 </head>
 <body>
 
@@ -42,18 +42,20 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach items="${list}" var="list">
 							<tr>
-								<td></td>
-								<td class="text-left"><a href="#"></a></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>${list.book_id}</td>
+								<td class="text-left"><a href="#">${list.title}</a></td>
+								<td>${list.pubs}</td>
+								<td>${list.pub_date}</td>
+								<td>${list.author_id}</td>
 								
 								<td>
 								<a href="#">[삭제]</a>
 								</td>
 								
 							</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 		
